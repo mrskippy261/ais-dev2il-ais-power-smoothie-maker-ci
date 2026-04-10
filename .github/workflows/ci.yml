@@ -47,7 +47,6 @@ jobs:
         # ensure this runs even if tests fail
              if: always()
 
-
   scan:
     name: Security Checks
     runs-on: ubuntu-latest
@@ -65,7 +64,7 @@ jobs:
         run: uv python install
 
       - name: Scan for vulnerable dependencies
-        run: | 
+        run: |
           set -o pipefail
           echo "### 🛡️ Security Audit Results" >> $GITHUB_STEP_SUMMARY
           echo '```text' >> $GITHUB_STEP_SUMMARY
