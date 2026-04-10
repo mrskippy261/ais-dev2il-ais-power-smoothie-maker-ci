@@ -15,3 +15,10 @@ dev = [
     "pytest>=8.3.4",
     "pytest-html>=4.1.1",
 ]
+[tool.uv-secure.vulnerability_criteria]
+# Ignores only this specific vulnerability ID (Flask issue)
+ignore_vulnerabilities = ["PYSEC-2019-179"]
+
+[tool.uv-secure.ignore_packages]
+# Ignores all vulnerabilities for Flask version 0.5
+Flask = ["==0.5"]
